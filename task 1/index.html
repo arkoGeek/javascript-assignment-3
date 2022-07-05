@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="outer" style="width:500px; height:500px; margin:auto; background-color:red; display:flex;">
+    <div id="mid" style="width:300px; height:300px; margin:auto; background-color:green; display:inherit">
+      <div id="inner" style="width:100px; height:100px; margin:auto; background-color:yellow;">
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById("outer").addEventListener("click", (e) => {
+      alert("Outer div was clicked")
+    })
+    document.getElementById("mid").addEventListener("click", (e) => {
+      alert("Middle div was clicked")
+      e.stopImmediatePropagation()
+    })
+    document.getElementById("inner").addEventListener("click", (e) => {
+      alert("Inner div was clicked")
+      e.stopImmediatePropagation()
+    })
+  </script>
+</body>
+</html>
